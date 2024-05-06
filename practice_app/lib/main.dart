@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:practice_app/view/api_screen.dart';
 
 import 'view/first_screen.dart';
 import 'view/my_home_pege.dart';
 import 'view/test_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    // Riverpodを使用するためにProviderScopeを追加
+    const ProviderScope(
+      child: MyApp()
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -24,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const FirstScreen(),
         '/MyHomePage': (context) => const MyHomePage(title: 'Flutter Demo Home Page'),
         '/TestScreen': (context) => const TestScreen(),
+        '/ApiScreen': (context) => const ApiScreen(),
       },
     );
   }

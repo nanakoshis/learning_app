@@ -25,9 +25,15 @@ class FirstScreen extends StatelessWidget {
               onPressed: () => Navigator.pushNamed(context, '/TestScreen'),
               child: const Text('TestScreen'),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, '/ApiScreen'),
+              child: const Text('TestSApiScreen'),
+            ),
           ],
         )
-        
       ),
     );
   }
