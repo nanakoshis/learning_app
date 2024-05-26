@@ -41,6 +41,8 @@ dependencies:
   flutter_riverpod:
   hooks_riverpod:
   riverpod_annotation:
+  # 電話アプリやWebviewを表示する
+  url_launcher: ^6.2.6
 
 
   # The following adds the Cupertino Icons font to your application.

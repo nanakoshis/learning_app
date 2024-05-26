@@ -5,6 +5,7 @@ import 'package:practice_app/view/api_screen.dart';
 import 'view/first_screen.dart';
 import 'view/my_home_pege.dart';
 import 'view/test_screen.dart';
+import 'view/url_launcher_screen.dart';
 
 void main() {
   runApp(
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         '/MyHomePage': (context) => const MyHomePage(title: 'Flutter Demo Home Page'),
         '/TestScreen': (context) => const TestScreen(),
         '/ApiScreen': (context) => const ApiScreen(),
+        '/UrlLauncherScreen': (context) => const UrlLauncherScreen(),
       },
     );
   }
