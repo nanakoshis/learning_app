@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:practice_app/view/api_screen.dart';
+import 'package:practice_app/view/callback_screen.dart';
 
 import 'view/first_screen.dart';
 import 'view/my_home_pege.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/TestScreen': (context) => const TestScreen(),
         '/ApiScreen': (context) => const ApiScreen(),
         '/UrlLauncherScreen': (context) => const UrlLauncherScreen(),
+        '/CallbackScreen': (context) => const CallbackScreen(),
       },
     );
   }

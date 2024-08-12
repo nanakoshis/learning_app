@@ -39,6 +39,13 @@ class FirstScreen extends StatelessWidget {
               onPressed: () => Navigator.pushNamed(context, '/UrlLauncherScreen'),
               child: const Text('UrlLauncherScreen'),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, '/CallbackScreen'),
+              child: const Text('CallbackScreen'),
+            ),
           ],
         )
       ),
