@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:practice_app/components/colors.dart';
 import 'package:practice_app/view/api_screen.dart';
 import 'package:practice_app/view/callback_screen.dart';
+import 'package:practice_app/view/color_sample_screen.dart';
 
 import 'view/first_screen.dart';
 import 'view/my_home_pege.dart';
@@ -25,10 +27,12 @@ class MyApp extends StatelessWidget {
     // MaterialApp Googleの標準デザイン（マテリアルデザイン）の雛形を設定（テーマカラーなど）
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      // テーマカラーの設定
+      // theme: ThemeData(
+      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      //   useMaterial3: true,
+      // ),
+      theme:sampleTheme,
       routes: {
         '/': (context) => const FirstScreen(),
         '/MyHomePage': (context) => const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -36,6 +40,7 @@ class MyApp extends StatelessWidget {
         '/ApiScreen': (context) => const ApiScreen(),
         '/UrlLauncherScreen': (context) => const UrlLauncherScreen(),
         '/CallbackScreen': (context) => const CallbackScreen(),
+        '/ColorSampleScreen': (context) => const ColorSampleScreen(),
       },
     );
   }
