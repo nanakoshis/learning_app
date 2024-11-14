@@ -53,6 +53,14 @@ class FirstScreen extends StatelessWidget {
               onPressed: () => Navigator.pushNamed(context, '/ColorSampleScreen'),
               child: const Text('ColorSampleScreen'),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/CarouselSliderScreen'),
+              child: const Text('CarouselSliderScreen'),
+            ),
           ],
         )
       ),
