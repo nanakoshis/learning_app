@@ -5,6 +5,7 @@ import 'package:practice_app/view/api_screen.dart';
 import 'package:practice_app/view/callback_screen.dart';
 import 'package:practice_app/view/carousel_slider.dart';
 import 'package:practice_app/view/color_sample_screen.dart';
+import 'package:practice_app/view/environmental_variables_screen.dart';
 
 import 'view/first_screen.dart';
 import 'view/my_home_pege.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/CallbackScreen': (context) => const CallbackScreen(),
         '/ColorSampleScreen': (context) => const ColorSampleScreen(),
         '/CarouselSliderScreen': (context) => const CarouselSliderScreen(),
+        '/EnvironmentalVariablesScreen': (context) => const EnvironmentalVariablesScreen(),
       },
     );
   }
