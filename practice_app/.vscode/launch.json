@@ -2,22 +2,32 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "practice_app(debug mode)",
+      "name": "practice_app(development)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "debug",
+      "args": [
+        "--dart-define=FLAVOR=development"
+      ]
     },
     {
-      "name": "practice_app (profile mode)",
+      "name": "practice_app (staging)",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "profile"
+      "flutterMode": "profile",
+      "args": [
+        "--dart-define=FLAVOR=staging"
+      ]
+      
     },
     {
-      "name": "practice_app (release mode)",
+      "name": "practice_app (production)",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "release"
+      "flutterMode": "release",
+      "args": [
+        "--dart-define=FLAVOR=production"
+      ]
     }
   ]
 }
