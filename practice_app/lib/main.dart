@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logger/logger.dart';
 import 'package:practice_app/components/colors.dart';
 import 'package:practice_app/view/api_screen.dart';
 import 'package:practice_app/view/callback_screen.dart';
@@ -50,6 +51,9 @@ class MyApp extends StatelessWidget {
     // TODO: 環境設定の出しわけ確認
     print("APP_MODE_NAME: ${dotenv.env['APP_MODE_NAME']}");
     print("APP_ENV: ${dotenv.env['APP_ENV']}");
+    print("APP_DEBUG: ${dotenv.env['APP_DEBUG']}");
+
+    final bool isDebugModeEnabled = getBoolFromEnv('APP_DEBUG');
     // MaterialApp Googleの標準デザイン（マテリアルデザイン）の雛形を設定（テーマカラーなど）
     return MaterialApp(
       title: 'Flutter Demo',
@@ -68,8 +72,31 @@ class MyApp extends StatelessWidget {
         '/CallbackScreen': (context) => const CallbackScreen(),
         '/ColorSampleScreen': (context) => const ColorSampleScreen(),
         '/CarouselSliderScreen': (context) => const CarouselSliderScreen(),
-        '/EnvironmentalVariablesScreen': (context) => const EnvironmentalVariablesScreen(),
+        '/EnvironmentalVariablesScreen': (context) => EnvironmentalVariablesScreen(
+          appModeName: dotenv.env['APP_MODE_NAME'] ?? '',
+          appEnv: dotenv.env['APP_ENV'] ?? '',
+          isDebugModeEnabled: isDebugModeEnabled,
+        ),
       },
     );
   }
+}
+
+/// .env String→bool変換のヘルパー関数
+bool getBoolFromEnv(String key, {bool defaultValue = false}) {
+  final logger = Logger();
+  final value = dotenv.env[key]?.toLowerCase();
+  if (value == 'true') {
+    return true;
+  } else if (value == 'false') {
+    return false;
+  }
+    // 想定外の場合はfalseを返却する
+    logger.e(
+      '[ERROR] The value of "$key" in .env is invalid: "$value". '
+      'Expected "true" or "false". Using defaultValue: $defaultValue'
+      ' - .env の「APP_DEBUG」の値が無効です: "$value"。"true"または"false"を指定してください。'
+      'defaultValue を使用: $defaultValue - ',
+    );
+    return defaultValue;
 }
