@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:practice_app/components/colors.dart';
 import 'package:practice_app/view/api_screen.dart';
+import 'package:practice_app/view/api_service_screen.dart';
 import 'package:practice_app/view/callback_screen.dart';
 import 'package:practice_app/view/carousel_slider.dart';
 import 'package:practice_app/view/color_sample_screen.dart';
@@ -52,7 +53,8 @@ class MyApp extends StatelessWidget {
     print("APP_MODE_NAME: ${dotenv.env['APP_MODE_NAME']}");
     print("APP_ENV: ${dotenv.env['APP_ENV']}");
     print("APP_DEBUG: ${dotenv.env['APP_DEBUG']}");
-
+    print("APP_API_KEY: ${dotenv.env['APP_API_KEY']}");
+    
     final bool isDebugModeEnabled = getBoolFromEnv('APP_DEBUG');
     // MaterialApp Googleの標準デザイン（マテリアルデザイン）の雛形を設定（テーマカラーなど）
     return MaterialApp(
@@ -77,6 +79,7 @@ class MyApp extends StatelessWidget {
           appEnv: dotenv.env['APP_ENV'] ?? '',
           isDebugModeEnabled: isDebugModeEnabled,
         ),
+        '/ApiServiceScreen': (context) => const ApiServiceScreen(),
       },
     );
   }
