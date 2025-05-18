@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:practice_app/model/diary.dart'; // Diaryクラスをインポート
+import 'package:practice_app/view/micro_cms_diary/micro_cms_diary_detail_page.dart';
 import 'package:practice_app/view_model/provider.dart'; // Dio をインポート
 
 class MicroCmsDiaryTopPage extends ConsumerWidget {
@@ -13,7 +14,7 @@ class MicroCmsDiaryTopPage extends ConsumerWidget {
     // Scaffold マテリアルデザイン用のウィジェット（appBarなどを設定できる） MaterialAppの基本設定を引き継ぐ
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ApiServiceScreen'),
+        title: const Text('DiaryTop'),
         automaticallyImplyLeading: true, // 戻るボタン矢印
       ),
       body: Center(
@@ -47,7 +48,20 @@ class MicroCmsDiaryTopPage extends ConsumerWidget {
            title: Text('${item[index].title}'),
            subtitle: Text('${item[index].date}'),
            onTap: () {
-            
+             Navigator.push(
+               context,
+               MaterialPageRoute(
+                 builder: (_) => MicroCmsDiaryDetailPage(
+                   title: item[index].title,
+                   date: item[index].date,
+                   description: item[index].description,
+                   image: item[index].image,
+                   ingredients: item[index].ingredients,
+                   steps: item[index].steps,
+                   cookingTime: item[index].cookingTime,
+                 ),
+               ),
+             );
            },
          );
        },
