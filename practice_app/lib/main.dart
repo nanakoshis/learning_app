@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:practice_app/components/colors.dart';
 import 'package:practice_app/view/api_screen.dart';
-import 'package:practice_app/view/api_service_screen.dart';
+import 'package:practice_app/view/micro_cms_diary/micro_cms_diary_top_page.dart';
 import 'package:practice_app/view/callback_screen.dart';
 import 'package:practice_app/view/carousel_slider.dart';
 import 'package:practice_app/view/color_sample_screen.dart';
@@ -79,7 +79,7 @@ class MyApp extends StatelessWidget {
           appEnv: dotenv.env['APP_ENV'] ?? '',
           isDebugModeEnabled: isDebugModeEnabled,
         ),
-        '/ApiServiceScreen': (context) => const ApiServiceScreen(),
+        '/MicroCmsDiaryTopPage': (context) => const MicroCmsDiaryTopPage(),
       },
     );
   }

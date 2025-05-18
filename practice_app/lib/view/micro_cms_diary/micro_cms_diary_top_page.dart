@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:practice_app/model/diary.dart'; // Diaryクラスをインポート
 import 'package:practice_app/view_model/provider.dart'; // Dio をインポート
 
-class ApiServiceScreen extends ConsumerWidget {
-  const ApiServiceScreen({super.key});
+class MicroCmsDiaryTopPage extends ConsumerWidget {
+  const MicroCmsDiaryTopPage({super.key});
 
   @override
   Widget build(context, WidgetRef ref) {
@@ -46,6 +46,9 @@ class ApiServiceScreen extends ConsumerWidget {
          return ListTile(
            title: Text('${item[index].title}'),
            subtitle: Text('${item[index].date}'),
+           onTap: () {
+            
+           },
          );
        },
      );

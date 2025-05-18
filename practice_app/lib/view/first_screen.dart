@@ -74,8 +74,8 @@ class FirstScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () =>
-                  Navigator.pushNamed(context, '/ApiServiceScreen'),
-              child: const Text('ApiServiceScreen'),
+                  Navigator.pushNamed(context, '/MicroCmsDiaryTopPage'),
+              child: const Text('MicroCmsDiaryTopPage'),
             ),
           ],
         )
