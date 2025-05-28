@@ -9,6 +9,7 @@ import 'package:practice_app/view/callback_screen.dart';
 import 'package:practice_app/view/carousel_slider.dart';
 import 'package:practice_app/view/color_sample_screen.dart';
 import 'package:practice_app/view/environmental_variables_screen.dart';
+import 'package:practice_app/view/navigation/bottom_%20navigation_page.dart';
 
 import 'view/first_screen.dart';
 import 'view/my_home_pege.dart';
@@ -80,6 +81,7 @@ class MyApp extends StatelessWidget {
           isDebugModeEnabled: isDebugModeEnabled,
         ),
         '/MicroCmsDiaryTopPage': (context) => const MicroCmsDiaryTopPage(),
+        '/BottomNavigationPage': (context) => const BottomNavigationPage(),
       },
     );
   }
