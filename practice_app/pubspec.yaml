@@ -49,6 +49,8 @@ dependencies:
   go_router: ^14.2.3
   # .envファイルの読み込み(環境変数)
   flutter_dotenv: ^5.0.2
+  
+  http: ^1.2.0
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -4,10 +4,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:practice_app/components/colors.dart';
 import 'package:practice_app/view/api_screen.dart';
+import 'package:practice_app/view/micro_cms_diary/micro_cms_diary_top_page.dart';
 import 'package:practice_app/view/callback_screen.dart';
 import 'package:practice_app/view/carousel_slider.dart';
 import 'package:practice_app/view/color_sample_screen.dart';
 import 'package:practice_app/view/environmental_variables_screen.dart';
+import 'package:practice_app/view/navigation/bottom_%20navigation_page.dart';
 
 import 'view/first_screen.dart';
 import 'view/my_home_pege.dart';
@@ -52,7 +54,8 @@ class MyApp extends StatelessWidget {
     print("APP_MODE_NAME: ${dotenv.env['APP_MODE_NAME']}");
     print("APP_ENV: ${dotenv.env['APP_ENV']}");
     print("APP_DEBUG: ${dotenv.env['APP_DEBUG']}");
-
+    print("APP_API_KEY: ${dotenv.env['APP_API_KEY']}");
+    
     final bool isDebugModeEnabled = getBoolFromEnv('APP_DEBUG');
     // MaterialApp Googleの標準デザイン（マテリアルデザイン）の雛形を設定（テーマカラーなど）
     return MaterialApp(
@@ -77,6 +80,8 @@ class MyApp extends StatelessWidget {
           appEnv: dotenv.env['APP_ENV'] ?? '',
           isDebugModeEnabled: isDebugModeEnabled,
         ),
+        '/MicroCmsDiaryTopPage': (context) => const MicroCmsDiaryTopPage(),
+        '/BottomNavigationPage': (context) => const BottomNavigationPage(),
       },
     );
   }

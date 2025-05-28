@@ -69,6 +69,22 @@ class FirstScreen extends StatelessWidget {
                   Navigator.pushNamed(context, '/EnvironmentalVariablesScreen'),
               child: const Text('EnvironmentalVariablesScreen(環境変数)'),
             ),
+            const SizedBox(
+            height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/MicroCmsDiaryTopPage'),
+              child: const Text('MicroCmsDiaryTopPage'),
+            ),
+            const SizedBox(
+            height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/BottomNavigationPage'),
+              child: const Text('BottomNavigationPage'),
+            ),
           ],
         )
       ),
